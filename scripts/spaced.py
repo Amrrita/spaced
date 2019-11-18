@@ -1,10 +1,10 @@
 from PyInquirer import style_from_dict, Token, prompt, Separator
-from examples import custom_style_2
+from examples import custom_style_1
 import json
 import random
 
 
-with open('data_file.json') as f:
+with open('json/data_file.json') as f:
     data = json.load(f)
 
     # Control flow to handle empty lists
@@ -122,7 +122,7 @@ with open('data_file.json') as f:
         print("Enter task name: ")
         task_name = input()
         data[list_name].append(task_name.lower())
-        with open('data_file.json', "w") as write_file:
+        with open('json/data_file.json', "w") as write_file:
             json.dump(data, write_file)
         print(task_name + " has been added to " + list_name + "!")
 
@@ -137,7 +137,7 @@ with open('data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["second"].append(task_name)
-                    with open('data_file.json', "w") as write_file:
+                    with open('json/data_file.json', "w") as write_file:
                         json.dump(data, write_file)
 
                     print(task_name + " has been moved up to every other day!")
@@ -147,7 +147,7 @@ with open('data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["weekly"].append(task_name)
-                    with open('data_file.json', "w") as write_file:
+                    with open('json/data_file.json', "w") as write_file:
                         json.dump(data, write_file)
 
                     print(task_name + " has been moved up to weekly!")
@@ -170,11 +170,11 @@ with open('data_file.json') as f:
 def main():
 
     while True:
-        main_menu_selection = prompt(main_menu, style=custom_style_2)
+        main_menu_selection = prompt(main_menu, style=custom_style_1)
 
         # View Task Control Flow
         if main_menu_selection['which_task'] == 'View Tasks':
-            view_tasks_selection = prompt(view_tasks, style=custom_style_2)
+            view_tasks_selection = prompt(view_tasks, style=custom_style_1)
 
             if (view_tasks_selection['view_task']).lower() == 'daily':
                 print_tasks("daily")
