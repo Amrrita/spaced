@@ -21,7 +21,10 @@
 
 ## Contributing
 
-Feel free to fork it and make a pull request, contribution are more than welcome. Will add a contribution guideline soon.
+1. File an issue to notify me about what you're working on.
+2. Fork the repo, develop and test your code changes, add docs.
+3. Make sure that your commit messages clearly describe the changes.
+4. Send a pull request.
 
 **Pending Features**
 
