@@ -8,7 +8,11 @@
 
 
 ## Installation
-~ Under Construction ~
+1. Clone repository
+   + `$ git clone https://github.com/safderareepattamannil/spaced.git`
+2. Install requirements
+   + `$ pip install -r requirements.txt` 
+
 
 
 ## Usage
