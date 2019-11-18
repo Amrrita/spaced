@@ -39,3 +39,6 @@
 **Pending Features**
 
    * Remove Task via Selection
+   * Select push up task instead of typing input
+   * View all tasks function
+
