@@ -1,3 +1,20 @@
 # Spaced
+`Spaced` is the minimalist solution to simple spaced repetition.
 
-A Spaced Repetition CLI Productivity Tool 
+* Spaced enables you to **compartmentalize tasks** into lists to be completed daily, every other day and weekly.
+* Simple add it to your system PATH and use Spaced from your terminal on any platform, anywhere.
+* Uses **JSON** to store data for easy expansion to other uses.
+
+
+
+## Installation
+~ Under Construction ~
+
+
+## Usage
+~ Under Construction ~
+
+
+## Contributing
+
+~ Under Construction ~
