@@ -32,7 +32,8 @@ with open('data_file.json') as f:
                 'View Tasks',
                 'Add Task',
                 'Push Task Up',
-                'Randomize Task'
+                'Randomize Task',
+              
             ]
         },
     ]
