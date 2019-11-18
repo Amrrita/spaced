@@ -33,7 +33,7 @@ with open('../json/data_file.json') as f:
                 'Add Task',
                 'Push Task Up',
                 'Randomize Task',
-              
+
             ]
         },
     ]
@@ -102,9 +102,15 @@ with open('../json/data_file.json') as f:
             'message': 'Here are your Weekly Tasks:',
             'choices': weekly
         },
+        
     ]
 
     # Main Loop Functions
+
+    # Write to json file
+    def json_write():
+        with open('../json/data_file.json', "w") as write_file:
+            json.dump(data, write_file)
 
     # Print Tasks
 
@@ -122,8 +128,7 @@ with open('../json/data_file.json') as f:
         print("Enter task name: ")
         task_name = input()
         data[list_name].append(task_name.lower())
-        with open('../json/data_file.json', "w") as write_file:
-            json.dump(data, write_file)
+        json_write()
         print(task_name + " has been added to " + list_name + "!")
 
     # Push task up to next level
@@ -137,8 +142,7 @@ with open('../json/data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["second"].append(task_name)
-                    with open('../json/data_file.json', "w") as write_file:
-                        json.dump(data, write_file)
+                    json_write()
 
                     print(task_name + " has been moved up to every other day!")
                     break
@@ -147,8 +151,7 @@ with open('../json/data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["weekly"].append(task_name)
-                    with open('../json/data_file.json', "w") as write_file:
-                        json.dump(data, write_file)
+                    json_write()
 
                     print(task_name + " has been moved up to weekly!")
                     break
@@ -160,12 +163,13 @@ with open('../json/data_file.json') as f:
         if checks == 3:
             print("This task does not exist!")
 
-
     # Select random task
+
     def select_task(list_name):
         seed = random.randint(1, 100)
         selected = data[list_name][seed % len(data[list_name])]
         print("Your selected task is " + selected)
+
 
 def main():
 
@@ -204,7 +208,8 @@ def main():
             push_up(task_name)
 
         elif main_menu_selection['which_task'] == 'Randomize Task':
-            view_tasks_selection = prompt(view_tasks_random, style=custom_style_1)
+            view_tasks_selection = prompt(
+                view_tasks_random, style=custom_style_1)
 
             if (view_tasks_selection['view_task_random']).lower() == 'daily':
                 select_task("daily")
