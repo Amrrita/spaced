@@ -22,11 +22,21 @@
    + `$ git clone https://github.com/safderareepattamannil/spaced.git`
 2. Install requirements
    + `$ pip install -r requirements.txt` 
-
-
-
+   
+   
 ## Usage
-~ Under Construction ~
+
+<p align="center"><img src="media/demo.gif"></p>
+
+**How to add to path** 
+1. Windows
+   + `$ to do`
+2. MAC OS
+   + `$ to do` 
+3. Linux
+   + `$ to do` 
+
+   
 
 
 ## Contributing
