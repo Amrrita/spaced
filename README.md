@@ -1,7 +1,8 @@
-# Spaced
+
+<p align="center"><img src="media/spaced.png"></p>
 
 
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/safderareepattamannil/spaced)](https://github.com/safderareepattamannil/spaced/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
