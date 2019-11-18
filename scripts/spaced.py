@@ -4,7 +4,7 @@ import json
 import random
 
 
-with open('json/data_file.json') as f:
+with open('../json/data_file.json') as f:
     data = json.load(f)
 
     # Control flow to handle empty lists
@@ -115,14 +115,14 @@ with open('json/data_file.json') as f:
                     for item in data[list_name]:
                         print(item)
                 else:
-                    print("There are no tasks in this list")
+                    print("There are no tasks in this list.")
 
     # Write task to json
     def add_task_json(list_name):
         print("Enter task name: ")
         task_name = input()
         data[list_name].append(task_name.lower())
-        with open('json/data_file.json', "w") as write_file:
+        with open('../json/data_file.json', "w") as write_file:
             json.dump(data, write_file)
         print(task_name + " has been added to " + list_name + "!")
 
@@ -137,7 +137,7 @@ with open('json/data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["second"].append(task_name)
-                    with open('json/data_file.json', "w") as write_file:
+                    with open('../json/data_file.json', "w") as write_file:
                         json.dump(data, write_file)
 
                     print(task_name + " has been moved up to every other day!")
@@ -147,7 +147,7 @@ with open('json/data_file.json') as f:
                     task_idx = data[list_name].index(task_name)
                     del data[list_name][task_idx]
                     data["weekly"].append(task_name)
-                    with open('json/data_file.json', "w") as write_file:
+                    with open('../json/data_file.json', "w") as write_file:
                         json.dump(data, write_file)
 
                     print(task_name + " has been moved up to weekly!")
@@ -187,7 +187,7 @@ def main():
 
         # Add Task Control Flow
         elif main_menu_selection['which_task'] == 'Add Task':
-            view_tasks_selection = prompt(view_tasks_add, style=custom_style_2)
+            view_tasks_selection = prompt(view_tasks_add, style=custom_style_1)
 
             if (view_tasks_selection['view_task_add']).lower() == 'daily':
                 add_task_json("daily")
@@ -204,7 +204,7 @@ def main():
             push_up(task_name)
 
         elif main_menu_selection['which_task'] == 'Randomize Task':
-            view_tasks_selection = prompt(view_tasks_random, style=custom_style_2)
+            view_tasks_selection = prompt(view_tasks_random, style=custom_style_1)
 
             if (view_tasks_selection['view_task_random']).lower() == 'daily':
                 select_task("daily")
