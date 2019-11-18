@@ -1,4 +1,13 @@
 # Spaced
+
+
+
+![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
+[![GitHub Issues](https://img.shields.io/github/issues/safderareepattamannil/spaced)](https://github.com/safderareepattamannil/spaced/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 `Spaced` is the minimalist solution to simple spaced repetition.
 
 * Spaced enables you to **compartmentalize tasks** into lists to be completed daily, every other day and weekly.
