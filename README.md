@@ -21,4 +21,8 @@
 
 ## Contributing
 
-~ Under Construction ~
+Feel free to fork it and make a pull request, contribution are more than welcome. Will add a contribution guideline soon.
+
+**Pending Features**
+
+   * Remove Task via Selection
