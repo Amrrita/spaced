@@ -22,6 +22,11 @@ with open('../json/data_file.json') as f:
         weekly = data["weekly"]
     else:
         weekly = ["There are no tasks in this list"]
+    
+    if len(data["daily"]) or len(data["second"]) or len(data["weekly"]) != 0:
+        total = [data["daily"], data["second"], data["weekly"]]
+        
+    
 
     main_menu = [
         {
@@ -47,6 +52,7 @@ with open('../json/data_file.json') as f:
                 'Daily',
                 'Every Other Day',
                 'Weekly',
+                'All',
             ]
         },
     ]
@@ -104,6 +110,15 @@ with open('../json/data_file.json') as f:
         },
     ]
 
+    show_all_tasks = [
+        {
+            'type' : 'list',
+            'name' : 'view_all_tasks',
+            'message' :'Here are all your tasks',
+            'choices' : total
+        }
+    ]
+
     # Main Loop Functions
 
     # Print Tasks
@@ -116,6 +131,11 @@ with open('../json/data_file.json') as f:
                         print(item)
                 else:
                     print("There are no tasks in this list.")
+    
+    def print_all(total):
+        print("Daily: " , total[0])
+        print("Every other day: " , total[1])
+        print("Weekly: " , total[2])
 
     # Write task to json
     def add_task_json(list_name):
@@ -179,11 +199,14 @@ def main():
             if (view_tasks_selection['view_task']).lower() == 'daily':
                 print_tasks("daily")
 
-            elif (view_tasks_selection['view_task']).lower() == 'every other day':
+            if (view_tasks_selection['view_task']).lower() == 'every other day':
                 print_tasks("second")
+            
+            if (view_tasks_selection['view_task']).lower == 'weekly':
+                print_tasks("weekly")
 
             else:
-                print_tasks("weekly")
+                print_all(total)
 
         # Add Task Control Flow
         elif main_menu_selection['which_task'] == 'Add Task':
