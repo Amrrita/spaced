@@ -51,6 +51,19 @@ with open('data_file.json') as f:
         },
     ]
 
+    view_tasks_add = [
+        {
+            'type': 'list',
+            'name': 'view_task_add',
+            'message': 'Which list would you like to add the task to?',
+            'choices': [
+                'Daily',
+                'Every Other Day',
+                'Weekly',
+            ]
+        },
+    ]
+
     show_tasks_daily = [
         {
             'type': 'list',
@@ -78,32 +91,58 @@ with open('data_file.json') as f:
         },
     ]
 
-
     def print_tasks(list_name):
         for key in data:
             if key == list_name:
-                for item in data[list_name]:
-                    print(item)
+                if len(data[list_name]) != 0:
+                    for item in data[list_name]:
+                        print(item)
+                else:
+                    print("There are no tasks in this list")
 
+    # Write task to json
+    def add_task_json(list_name):
+        print("Enter task name: ")
+        task_name = input()
+        data[list_name].append(task_name)
+        with open('data_file.json', "w") as write_file:
+            json.dump(data, write_file)
+        print(task_name + " has been added to " + list_name + "!")
 
 
 def main():
 
-    main_menu_selection = prompt(main_menu, style=custom_style_2)
-    print(main_menu_selection)
-    view_tasks_selection = prompt(view_tasks, style=custom_style_2)
-    print(view_tasks_selection)
-   
+    while True:
+        main_menu_selection = prompt(main_menu, style=custom_style_2)
 
-    if (view_tasks_selection['view_task']).lower() == 'daily':
-        print_tasks("daily")
-        # Some control to return to menu
+        # View Task Control Flow
+        if main_menu_selection['which_task'] == 'View Tasks':
+            view_tasks_selection = prompt(view_tasks, style=custom_style_2)
 
-  
+            if (view_tasks_selection['view_task']).lower() == 'daily':
+                print_tasks("daily")
 
+            elif (view_tasks_selection['view_task']).lower() == 'every other day':
+                print_tasks("second")
 
-    
+            else:
+                print_tasks("weekly")
 
+        # Add Task Control Flow
+        elif main_menu_selection['which_task'] == 'Add Task':
+            view_tasks_selection = prompt(view_tasks_add, style=custom_style_2)
+
+            if (view_tasks_selection['view_task_add']).lower() == 'daily':
+                add_task_json("daily")
+
+            elif (view_tasks_selection['view_task_add']).lower() == 'every other day':
+                add_task_json("second")
+
+            elif (view_tasks_selection['view_task_add']).lower() == 'weekly':
+                add_task_json("weekly")
+
+        else:
+            break
 
 
 if __name__ == "__main__":
