@@ -136,6 +136,10 @@ with open('../json/data_file.json') as f:
         print("Daily: " , total[0])
         print("Every other day: " , total[1])
         print("Weekly: " , total[2])
+        for i in range(len(total)) :  
+            for j in range(len(total[i])) :  
+                print(total[i][j], end=" ") 
+        print()  
 
     # Write task to json
     def add_task_json(list_name):
